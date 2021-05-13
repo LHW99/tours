@@ -8,6 +8,18 @@ function App() {
     let newTours = tours.filter((tour)=>tour.id !== id);
     setTours(newTours);
   };
+  const resetTour = () =>{
+    setTours(toursList)
+  }
+
+  if (tours.length === 0){
+    return (
+      <div className="container">
+        <h4>No more tours!</h4>
+        <button className="btn" onClick={()=>resetTour()}>Refresh</button>
+      </div>
+    )
+  }
 
   return (
     <div className="container">
